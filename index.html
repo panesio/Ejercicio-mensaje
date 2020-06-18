@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<input id="message" type="text" placeholder="Mensaje Encriptado">
+<button onclick="mensaje()">Enviar</button>
+
+
+  <script type="text/javascript">
+      function mensaje (str){
+          var str = document.getElementById('message').value.toUpperCase();
+          var arr = [];
+          for (i=0;i<str.length; i++){
+              if(str.charCodeAt(i)>=65 && str.charCodeAt(i)<=77){
+                  arr.push(String.fromCharCode(str.charCodeAt(i)+13));
+              } else if(
+                  str.charCodeAt(i)>=78 && str.charCodeAt(i)<=90
+              ){
+                arr.push(String.fromCharCode(str.charCodeAt(i)-13));
+              }else if(str.charCodeAt(i)<65){
+                  arr.push(str[i]);
+              }
+          }
+          document.write (arr.join (""));
+      }
+      
+  </script>
+
+  
+<!-- <script type="text/javascript">
+    function msg (str){
+        let solved = "";
+        for(var i = 0; i<str.length; i++){
+            var arr = str[i].charCodeAt();
+            if(arr >= 65 && arr <= 77){
+                solved += String.fromCharCode(arr + 13);
+            }else if(
+                arr >= 78 && arr <=90
+            ){
+                solved += String.fromCharCode(arr - 13);
+            }else{
+                solved += str[i];
+            }
+        }
+        document.write(solved);
+    }
+
+    msg("Cevzreb erfhryir ry ceboyrzn. Ragbaprf, rfpevor ry pbqvtb")
+</script> -->
+</body>
+</html>
